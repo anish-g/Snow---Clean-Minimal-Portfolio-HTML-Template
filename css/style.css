@@ -88,7 +88,7 @@ body {
 	width: 100%;
 }
 
-.banner-body .banner-subtitle h2 {
+.banner-body h2.banner-subtitle {
 	text-transform: uppercase;
 	color: #fff;
 	font-size: 13px;
@@ -97,7 +97,7 @@ body {
 	margin-bottom: 18px;
 }
 
-.banner-body .banner-title h1 {
+.banner-body h1.banner-title {
 	color: #fff;
 	font-size: 45px;
 	font-family: Playfair Display, serif;
