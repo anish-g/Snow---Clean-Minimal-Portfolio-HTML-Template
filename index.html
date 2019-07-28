@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/favicon.png">
 
 	<title>Snow</title>
 
@@ -21,12 +22,34 @@
 	<div id="header" class="header">
 		<div class="container clearfix">
 			<div class="logo">
-				<a href="#"><img class="whiteIcons" src="images/logo.png" alt="Website logo white"><img class="blackIcons" src="images/logo-black.png" alt="Website logo black"></a>
+				<a title="Homepage" href="#"><img class="whiteIcons" src="images/logo.png" alt="Website logo white"><img class="blackIcons" src="images/logo-black.png" alt="Website logo black"></a>
 			</div>
 			<div class="menu">
-				<a href="#"><img class="whiteIcons" src="images/hamburger.png" alt="menu icon white"><img class="blackIcons" src="images/hamburger-black.png" alt="menu icon black"></a>
+				<a title="Menu" href="javascript:void(0)" onclick="openSidebar()"><img class="whiteIcons" src="images/hamburger.png" alt="menu icon white"><img class="blackIcons" src="images/hamburger-black.png" alt="menu icon black"></a>
 			</div>
 		</div>
+	</div>
+
+	<div id="sidebar" class="sidebar">
+		<div class="container clearfix">
+			<div class="logo">
+				<a title="Homepage" href="#"><img src="images/logo.png" alt="Website logo white"></a>
+			</div>
+			<div class="menu">
+				<a title="Close menu" href="javascript:void(0)" onclick="closeSidebar()"><img src="images/cross.png" alt="close menu"></a>
+			</div>
+		</div>
+		<div class="menu-list">
+				<ul>
+					<li><a href="#about" onclick="closeSidebar()">About Us</a></li>
+					<li><a href="#numbers" onclick="closeSidebar()">Portfolio</a></li>
+					<li><a href="#best-projects" onclick="closeSidebar()">Best Projects</a></li>
+					<li><a href="#testimonials" onclick="closeSidebar()">Testimonals</a></li>
+					<li><a href="#clients" onclick="closeSidebar()">Clients</a></li>
+					<li><a href="#latest-blog" onclick="closeSidebar()">Latest Blog</a></li>
+					<li><a href="#contact" onclick="closeSidebar()">Contact Us</a></li>
+				</ul>
+			</div>
 	</div>
 
 	<div class="banner">
@@ -41,11 +64,11 @@
 			</div>
 		</div>
 		<div class="arrow">
-			<a href="#"><span class="pe-7s-angle-down"></span></a>
+			<a id="arrow" title="More Info" href="#about"><span class="pe-7s-angle-down"></span></a>
 		</div>
 	</div>
 
-	<div class="about">
+	<div id="about" class="about">
 		<div class="container">
 			<div class="about-body">
 				<h2>About Our Agency</h2>
@@ -55,7 +78,7 @@
 		</div>
 	</div>
 
-	<div class="numbers clearfix">
+	<div id="numbers" class="numbers clearfix">
 		<div class="container">
 			<div class="portfolio">
 				<span class="portfolio-icon pe-7s-portfolio"></span>
@@ -88,7 +111,7 @@
 		</div>
 	</div>
 
-	<div class="best-projects clearfix">
+	<div id="best-projects" class="best-projects clearfix">
 		<div class="container">
 			<h2>Best Projects</h2>
 			<div class="project-text">
@@ -98,22 +121,28 @@
 				<div class="project-col">
 					<div class="project-display">
 						<div class="projects">
-							<a href="">
-								<div class="project-1"></div>
+							<a title="See project details" href="">
+								<div class="project-1">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
 					<div class="project-display">
 						<div class="projects">
-							<a href="">
-								<div class="project-2"></div>
+							<a title="See project details" href="">
+								<div class="project-2">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
 					<div class="project-display">
 						<div class="projects long long-tab">
-							<a href="">
-								<div class="project-3"></div>
+							<a title="See project details" href="">
+								<div class="project-3">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
@@ -121,8 +150,10 @@
 				<div class="project-col">
 					<div class="project-display">
 						<div class="projects long long-tab">
-							<a href="">
-								<div class="project-4"></div>
+							<a title="See project details" href="">
+								<div class="project-4">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
@@ -132,14 +163,17 @@
 								<div class="project-5">
 									<h2>Vinil Record</h2>
 									<p>Photography</p>
+									<div class="project-overlay"></div>
 								</div>
 							<!-- </a> -->
 						</div>
 					</div>
 					<div class="project-display">
 						<div class="projects">
-							<a href="">
-								<div class="project-6"></div>
+							<a title="See project details" href="">
+								<div class="project-6">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
@@ -147,22 +181,28 @@
 				<div class="project-col">
 					<div class="project-display">
 						<div class="projects long-tab">
-							<a href="">
-								<div class="project-7"></div>
+							<a title="See project details" href="">
+								<div class="project-7">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
 					<div class="project-display">
 						<div class="projects long">
-							<a href="">
-								<div class="project-8"></div>
+							<a title="See project details" href="">
+								<div class="project-8">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
 					<div class="project-display">
 						<div class="projects">
-							<a href="">
-								<div class="project-9"></div>
+							<a title="See project details" href="">
+								<div class="project-9">
+									<div class="project-overlay"></div>
+								</div>
 							</a>
 						</div>
 					</div>
@@ -171,33 +211,33 @@
 		</div>
 	</div>
 
-	<div class="testimonials">
+	<div id="testimonials" class="testimonials">
 		<div class="container">
-			<div class="testimonials-view">
-				<div class="testimonials-text clearfix">
+			<div id="testimonials-view" class="testimonials-view">
+				<div id="testimonials-text" class="testimonials-text clearfix">
 					<div class="testimonial">
 						<blockquote class="quote">
 							<p><span class="quote-symbol">"</span>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.<span class="quote-symbol">"</span></p>
 							<cite class="cite">Michael Hopkins</cite>
 						</blockquote>
 					</div>
-					<!-- <div class="testimonial">
+					<div class="testimonial">
 						<blockquote class="quote">
-							<p>"Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap."</p>
+							<p><span class="quote-symbol">"</span>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.<span class="quote-symbol">"</span></p>
 							<cite class="cite">Michael Hopkins</cite>
 						</blockquote>
-					</div> -->
-					<!-- <div class="testimonial">
+					</div>
+					<div class="testimonial">
 						<blockquote class="quote">
-							<p>"Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap."</p>
+							<p><span class="quote-symbol">"</span>Outstanding job and exceeded all expectations. It was a pleasure to work with them on a sizable first project and am looking forward to start the next one asap.<span class="quote-symbol">"</span></p>
 							<cite class="cite">Michael Hopkins</cite>
 						</blockquote>
-					</div> -->
+					</div>
 				</div> 
 			</div>
 			<div class="testimonial-indicator">
 				<ol>
-					<li class="dot is-selected"></li>
+					<li class="dot"></li>
 					<li class="dot"></li>
 					<li class="dot"></li>
 				</ol>
@@ -205,7 +245,7 @@
 		</div>
 	</div>
 
-	<div class="clients">
+	<div id="clients" class="clients">
 		<div class="container">
 			<div class="clients-viewport">
 				<div class="clients-logo clearfix">
@@ -219,7 +259,7 @@
 		</div>
 	</div>
 
-	<div class="latest-blog">
+	<div id="latest-blog" class="latest-blog">
 		<div class="container">
 			<h2>Latest Blog</h2>
 			<p>Donec orci sem, pretium ac dolor et, faucibus faucibus mauris. Etiam,pellentesque faucibus.<br>Vestibulum gravida volutpat ipsum non ultrices.</p>
@@ -229,10 +269,10 @@
 
 					<div class="post">
 						<div class="thumbnail">
-							<a href="#">
+							<a title="Blog post" href="#">
 								<img src="images/post-1.jpg" alt="post thumbnail">
 							</a>
-							<span class="category"><a href="#">Nature</a></span>
+							<span class="category"><a title="See Category" href="#">Nature</a></span>
 						</div>
 						<div class="post-body">
 							<div class="post-inner">
@@ -249,10 +289,10 @@
 
 					<div class="post post-extra">
 						<div class="thumbnail">
-							<a href="#">
+							<a title="Blog post" href="#">
 								<img src="images/post-2.jpg" alt="post thumbnail">
 							</a>
-							<span class="category"><a href="#">Branding</a></span>
+							<span class="category"><a title="See Category" href="#">Branding</a></span>
 						</div>
 						<div class="post-body">
 							<div class="post-inner">
@@ -269,10 +309,10 @@
 
 					<div class="post post-extra">
 						<div class="thumbnail">
-							<a href="#">
+							<a title="Blog post" href="#">
 								<img src="images/post-3.jpg" alt="post thumbnail">
 							</a>
-							<span class="category"><a href="#">Design</a></span>
+							<span class="category"><a title="See Category" href="#">Design</a></span>
 						</div>
 						<div class="post-body">
 							<div class="post-inner">
@@ -300,7 +340,7 @@
 		</div>
 	</div>
 
-	<div class="contact">
+	<div id="contact" class="contact">
 		<div class="container clearfix">
 			<div class="contact-text">
 				<h2 class="contact-title">Contact Info:</h2>
@@ -337,12 +377,12 @@
 				<p>Aenean mattis augue in arcu tempor bibendum. Nam euismod facilisis magna, quis pharetra turpis molestie eu. Integer feugiat arcu sit amet leo ullamcorper feugiat efficitur.</p>
 				<div class="footer-social">
 					<ul>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-						<li><a href="#"><i class="fab fa-behance"></i></a></li>
-						<li><a href="#"><i class="fab fa-pinterest"></i></a></li>
-						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li><a title="Visit our Facebook page" href="#"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a title="Tweet us" href="#"><i class="fab fa-twitter"></i></a></li>
+						<li><a title="Visit Google+ page" href="#"><i class="fab fa-google-plus-g"></i></a></li>
+						<li><a title="Visit our Behance page" href="#"><i class="fab fa-behance"></i></a></li>
+						<li><a title="Find us on Pinterest" href="#"><i class="fab fa-pinterest"></i></a></li>
+						<li><a title="Follow us on Instagram" href="#"><i class="fab fa-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>
