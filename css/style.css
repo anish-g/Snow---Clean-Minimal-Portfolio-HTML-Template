@@ -428,9 +428,7 @@ body {
 }
 
 .testimonials-text {
-	/*width: 100%;*/
 	padding: 17px 0;
-	/*position: absolute;*/
 }
 
 .testimonial {
@@ -554,17 +552,16 @@ body {
 }
 
 .blog-posts {
-	padding: 0 10px;
+	overflow: hidden;
+	width: 100%;
+	/*max-width: 340px;*/
+	margin: 0 auto;
 }
 
 
 .post {
-	padding: 0 15px;
 	display: block;
-}
-
-.post-extra {
-	display: none;
+	float: left;
 }
 
 .thumbnail {
@@ -607,7 +604,7 @@ body {
 }
 
 .post-inner {
-	padding: 25px;
+	padding: 15px;
 }
 
 h2.post-title {
@@ -803,7 +800,6 @@ h2.post-title {
 
 
 /*-----------media queries-------------*/
-
 @media (min-width: 576px) {
 	.container {
 		width: 540px;
@@ -933,12 +929,18 @@ h2.post-title {
 		padding-top: 35px;
 	}
 
-	.post {
-		float: left;
+	.blog-posts {
+		padding: 0 7px;
+		max-width: 100%;
 	}
 
-	.post-extra {
-		display: block;
+	.post-slide {
+		width: 675px;
+		margin: 0 auto;
+	}
+	
+	.post {
+		padding: 0 12px;
 	}
 
 	.thumbnail {
@@ -990,17 +992,30 @@ h2.post-title {
 		width: 45.625em;
 	}
 
+	.blog-posts {
+		padding: 0 10px;
+		width: calc(100% - 20px);
+	}
+
+	.post-slide {
+		width: 900px;
+	}
+	
+	.post {
+		padding: 0 10px;
+	}
+
 	.post-inner {
 		padding: 28px 25px;
 	}
 
 	.thumbnail {
-		width: 340px;
+		width: 320px;
 		height: 220px;
 	}
 
 	.post-body {
-		width: 340px;
+		width: 320px;
 	}
 
 	.post-text {
@@ -1097,10 +1112,6 @@ h2.post-title {
 		padding: 0 25px;
 	}
 
-	/*.testimonials-text {
-		width: 3420px;
-	}*/
-
 	.numbers .portfolio {
 		width: 285px;
 		float: left;
@@ -1118,6 +1129,14 @@ h2.post-title {
 
 	.project-5 h2 {
 		padding-top: 90px;
+	}
+
+	.post-slide {
+		width: 1110px;
+	}
+
+	.post {
+		padding: 0 15px;
 	}
 
 	.thumbnail {

@@ -18,56 +18,107 @@ window.onresize = function() {
 };
 
 
-var left = 0;
-var current = 0;
-var next = 0;
-var dots = document.getElementsByClassName('dot');
+var leftTestimonial = 0;
+var currentTestimonial = 0;
+var nextTestimonial = 0;
+var dotsTestimonial = document.getElementsByClassName('dot-testimonial');
 
-function slider(current, next, element, width) {
+function sliderTestimonial() {
 	var slide = setInterval( (function() {
-		console.log(current, next);
-		left = left + ((width * (current - next)) / (0.1 * 1000));
-		console.log(left, (next * width));
-		if (((Math.ceil(Math.abs(left))) == (next * width)) || (Math.floor(Math.abs(left))) == (next * width)) {
-			if (((Math.ceil(Math.abs(left))) == (next * width))) {
-				left = Math.ceil(left);
-			} else if ((Math.floor(Math.abs(left))) == (next * width)) {
-				left = Math.floor(left);
+		leftTestimonial = leftTestimonial + ((testimonialWidth * (currentTestimonial - nextTestimonial)) / (testimonialWidth / 3));
+		if (((Math.ceil(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth)) || (Math.floor(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth)) {
+			if (((Math.ceil(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth))) {
+				leftTestimonial = Math.ceil(leftTestimonial);
+			} else if ((Math.floor(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth)) {
+				leftTestimonial = Math.floor(leftTestimonial);
 			}
 
-			element.style.marginLeft = left + 'px';
+			testimonialsWrapper.style.marginLeft = leftTestimonial + 'px';
 			clearInterval(slide);
-			initSlider(element, width);
+			initTestimonialSlider();
 		}
-		element.style.marginLeft = left + 'px';
+		testimonialsWrapper.style.marginLeft = leftTestimonial + 'px';
 	}), 1);
 }
 
-function initSlider(element, width) {
-	dots[current].classList.add('is-selected');
+function initTestimonialSlider() {
+	dotsTestimonial[currentTestimonial].classList.add('is-selected');
 
-	console.log(current, next);
 	setTimeout(function() {
-		slider(current, next, element, width);
+		sliderTestimonial();
 	}, 1500);
 
-	dots[current].classList.remove('is-selected');
-	dots[next].classList.add('is-selected');
+	dotsTestimonial[currentTestimonial].classList.remove('is-selected');
+	dotsTestimonial[nextTestimonial].classList.add('is-selected');
 
-	current = next;
-	next += 1;
-	if (next >= testimonialNumbers) {
-		next = 0;
+	currentTestimonial = nextTestimonial;
+	nextTestimonial += 1;
+	if (nextTestimonial >= testimonialNumbers) {
+		nextTestimonial = 0;
 	}
 }
 
-if (window.innerWidth >= 1200){
-	initSlider(testimonialsWrapper, testimonialWidth);
+
+
+
+initTestimonialSlider(testimonialsWrapper, testimonialWidth);
+
+if (window.innerWidth <= 768) {
+
+	var postWidth = document.getElementById('blog-posts').offsetWidth;
+	var postsWrapper = document.getElementById('post-slide');
+	var posts = document.getElementsByClassName('post');
+	// var postWidth = document.getElementsByClassName('thumbnail')[0].offsetWidth;
+	var postsNumbers = posts.length;
+	postsWrapper.style.width = postsNumbers * postWidth + 'px';
+	for (var i = 0; i < postsNumbers; i++) {
+		posts[i].style.width = postWidth + 'px';
+	}
+	var leftPosts = 0;
+	var currentPosts = 0;
+	var nextPosts = 0;
+	var dotsPosts = document.getElementsByClassName('dot-post');
+
+	dotsPosts[1].classList.remove('is-selected');
+
+	function sliderPosts() {
+		var slidePosts = setInterval( (function() {
+			leftPosts = leftPosts + ((postWidth * (currentPosts - nextPosts)) / (postWidth / 1));
+			console.log(leftPosts);
+			if (((Math.ceil(Math.abs(leftPosts))) == (nextPosts * postWidth)) || (Math.floor(Math.abs(leftPosts))) == (nextPosts * postWidth)) {
+				if (((Math.ceil(Math.abs(leftPosts))) == (nextPosts * postWidth))) {
+					leftPosts = Math.ceil(leftPosts);
+				} else if ((Math.floor(Math.abs(leftPosts))) == (nextPosts * postWidth)) {
+					leftPosts = Math.floor(leftPosts);
+				}
+
+				postsWrapper.style.marginLeft = leftPosts + 'px';
+				clearInterval(slidePosts);
+				initPostsSlider();
+			}
+			postsWrapper.style.marginLeft = leftPosts + 'px';
+		}), 1);
+	}
+
+	function initPostsSlider() {
+		dotsPosts[currentPosts].classList.add('is-selected');
+
+		setTimeout(function() {
+			sliderPosts();
+		}, 1500);
+
+		dotsPosts[currentPosts].classList.remove('is-selected');
+		dotsPosts[nextPosts].classList.add('is-selected');
+
+		currentPosts = nextPosts;
+		nextPosts += 1;
+		if (nextPosts >= postsNumbers) {
+			nextPosts = 0;
+		}
+	}
+
+	initPostsSlider();
 }
-
-
-
-
 
 
 
