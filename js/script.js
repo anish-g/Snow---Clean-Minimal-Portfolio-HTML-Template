@@ -25,7 +25,7 @@ var dotsTestimonial = document.getElementsByClassName('dot-testimonial');
 
 function sliderTestimonial() {
 	var slide = setInterval( (function() {
-		leftTestimonial = leftTestimonial + ((testimonialWidth * (currentTestimonial - nextTestimonial)) / (testimonialWidth / 3));
+		leftTestimonial = leftTestimonial + ((testimonialWidth * (currentTestimonial - nextTestimonial)) / (testimonialWidth / 1));
 		if (((Math.ceil(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth)) || (Math.floor(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth)) {
 			if (((Math.ceil(Math.abs(leftTestimonial))) == (nextTestimonial * testimonialWidth))) {
 				leftTestimonial = Math.ceil(leftTestimonial);
