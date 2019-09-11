@@ -64,19 +64,23 @@ var onResize = function (width) {
 		testimonials[i].style.width = testimonialWidth + 'px';
 	}
 
-	if (window.innerWidth > 768 && window.innerWidth < 992) {
+	function stopSlider(wd) {
 		clearInterval(slidePosts);
 		clearTimeout(postsTimeout);
 		flagPostSlider = false;
 		document.getElementsByClassName('post-slide')[0].style.margin = '0 auto';
-		document.getElementsByClassName('post-slide')[0].style.width = '675px';
+		document.getElementsByClassName('post-slide')[0].style.width = wd + 'px';
 		for (var i = 0; i < postsNumbers; i++) {
 			posts[i].style.width = 'auto';
 		}
+	}
+
+	if (window.innerWidth > 768 && window.innerWidth < 992) {
+		stopSlider(675);
 	} else if (window.innerWidth >= 992 && window.innerWidth < 1200) {
 		document.getElementsByClassName('post-slide')[0].style.width = '900px';
 	} else if (window.innerWidth >= 1200) {
-		document.getElementsByClassName('post-slide')[0].style.width = '1110px';
+		stopSlider(1110);
 	} else if (window.innerWidth <= 768) {
 		postWidth = document.getElementById('blog-posts').offsetWidth;
 		posts = document.getElementsByClassName('post');
@@ -89,6 +93,8 @@ var onResize = function (width) {
 }
 
 var resizeCallback = function () {
+	console.log('resize');
+	console.log(window.innerWidth);
 	testimonialWidth = document.getElementById('testimonials-view').offsetWidth;
 	if (window.innerWidth <= 768) {
 		postsWrapper.style.width = postsNumbers * postWidth + 'px';
